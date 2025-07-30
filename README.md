@@ -1,8 +1,13 @@
 # 🚀 ADmyBRAND AI Marketing Suite
 
 > **A comprehensive AI-powered marketing platform built with React, Vite, and Tailwind CSS**
+---
 
-![ADmyBRAND Banner](https://via.placeholder.com/1200x400/7C3AED/FFFFFF?text=ADmyBRAND+AI+Marketing+Suite)
+## Deployed Link
+
+https://ad-my-brand-internship-project-2qk9.vercel.app/
+
+---
 
 ## 📋 Table of Contents
 
@@ -265,72 +270,6 @@ The project follows these conventions:
 - **Component Naming**: PascalCase for components
 - **File Organization**: Logical grouping by feature
 
-### Environment Variables
-
-Create a `.env.local` file for environment-specific variables:
-
-```env
-VITE_API_URL=your_api_url_here
-VITE_ANALYTICS_ID=your_analytics_id
-```
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-The project includes `vercel.json` configuration:
-
-1. **Install Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
-   vercel
-   ```
-
-### Other Platforms
-
-**Netlify**:
-```bash
-npm run build
-# Upload dist/ folder to Netlify
-```
-
-**GitHub Pages**:
-```bash
-npm run build
-# Configure GitHub Pages to serve from dist/
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit your changes**
-   ```bash
-   git commit -m 'Add some amazing feature'
-   ```
-4. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow the existing code style
-- Add comments for complex logic
-- Test responsiveness on multiple devices
-- Ensure accessibility compliance
-- Update documentation for new features
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -339,17 +278,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Himanshu Mishra**
 - GitHub: [@himanshumishra1309](https://github.com/himanshumishra1309)
-- LinkedIn: [Connect with me](https://linkedin.com/in/your-profile)
-
-## 🙏 Acknowledgments
-
-- **React Team** - For the amazing React framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Radix UI** - For accessible component primitives
-- **Lucide** - For the beautiful icon set
-- **Framer Motion** - For smooth animations
-- **Vercel** - For seamless deployment
-
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/himanshu-mishra-459b882b4/)
 ---
 
 <div align="center">
