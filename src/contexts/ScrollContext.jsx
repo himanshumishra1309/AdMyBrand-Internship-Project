@@ -14,19 +14,21 @@ export const useScroll = () => {
 
 export const ScrollProvider = ({ children }) => {
   const [scrollY, setScrollY] = useState(0)
+  const [scrollDirection, setScrollDirection] = useState("down")
 
   useEffect(() => {
+    let lastScrollY = window.scrollY
+
     const handleScroll = () => {
-      setScrollY(window.scrollY)
+      const currentScrollY = window.scrollY
+      setScrollDirection(currentScrollY > lastScrollY ? "down" : "up")
+      setScrollY(currentScrollY)
+      lastScrollY = currentScrollY
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  return (
-    <ScrollContext.Provider value={{ scrollY }}>
-      {children}
-    </ScrollContext.Provider>
-  )
+  return <ScrollContext.Provider value={{ scrollY, scrollDirection }}>{children}</ScrollContext.Provider>
 }

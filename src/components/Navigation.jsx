@@ -84,7 +84,7 @@ export default function Navigation() {
           : ""
       }`}
     >
-      <div className=" flex justify-between container mx-auto px-4 lg:px-8">
+      <div className=" mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Simplified Logo */}
           <div 
