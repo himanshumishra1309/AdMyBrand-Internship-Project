@@ -133,7 +133,6 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: all 0.25s ease;
-  background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
 }
 
