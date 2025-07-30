@@ -466,75 +466,34 @@ function BlogResource() {
 
         {/* Newsletter Signup */}
         <div
-          className={`mt-24 text-center transition-all duration-1000 delay-700 ${
+          className={`mt-20 text-center transition-all duration-1000 delay-700 ${
             hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <div
-            className={`backdrop-blur-sm rounded-3xl border shadow-2xl p-12 lg:p-16 relative overflow-hidden ${
-              theme === "dark" ? "bg-slate-800/60 border-slate-700/50" : "bg-white/80 border-white/60"
+            className={`backdrop-blur-sm rounded-3xl border shadow-2xl p-12 ${
+              theme === "dark" ? "bg-slate-800/40 border-slate-700/50" : "bg-white/60 border-white/50"
             }`}
           >
-            {/* Background decoration */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl ${
-                theme === "dark" ? "bg-purple-500/10" : "bg-purple-400/10"
-              }`} />
-              <div className={`absolute bottom-0 left-0 w-32 h-32 rounded-full blur-2xl ${
-                theme === "dark" ? "bg-blue-500/10" : "bg-blue-400/10"
-              }`} />
-            </div>
-            
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-purple-500/30 mb-8">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
-                  <BookOpen className="w-4 h-4 text-white" />
-                </div>
-                <span className={`text-sm font-bold ${theme === "dark" ? "text-purple-300" : "text-purple-700"}`}>
-                  Newsletter
-                </span>
-              </div>
-              
-              <h3 className={`text-3xl lg:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-slate-900"}`}>
-                Stay Updated with 
-                <span className="block bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-                  Latest Insights
-                </span>
-              </h3>
-              <p className={`text-lg lg:text-xl mb-10 max-w-3xl mx-auto leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}>
-                Get the latest insights, strategies, and industry updates delivered directly to your inbox. Join 10,000+ marketers who trust our content.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className={`flex-1 px-6 py-4 rounded-2xl border backdrop-blur-sm transition-all duration-300 focus:ring-2 focus:ring-purple-500/50 focus:border-transparent focus:scale-105 shadow-lg ${
-                    theme === "dark"
-                      ? "bg-slate-800/60 border-slate-700/50 text-white placeholder-slate-400"
-                      : "bg-white/80 border-white/60 text-slate-900 placeholder-slate-500"
-                  }`}
-                />
-                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  Subscribe Now
-                </Button>
-              </div>
-              
-              <div className="mt-8 flex items-center justify-center gap-8 text-sm">
-                <div className={`flex items-center gap-2 ${theme === "dark" ? "text-slate-400" : "text-slate-500"}`}>
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span>10,000+ Subscribers</span>
-                </div>
-                <div className={`w-px h-4 ${theme === "dark" ? "bg-slate-600" : "bg-slate-300"}`} />
-                <div className={`flex items-center gap-2 ${theme === "dark" ? "text-slate-400" : "text-slate-500"}`}>
-                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                  <span>Weekly Updates</span>
-                </div>
-                <div className={`w-px h-4 ${theme === "dark" ? "bg-slate-600" : "bg-slate-300"}`} />
-                <div className={`flex items-center gap-2 ${theme === "dark" ? "text-slate-400" : "text-slate-500"}`}>
-                  <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                  <span>Unsubscribe Anytime</span>
-                </div>
-              </div>
+            <h3 className={`text-3xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-slate-900"}`}>
+              Stay Updated
+            </h3>
+            <p className={`text-lg mb-8 max-w-2xl mx-auto ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}>
+              Get the latest insights, strategies, and industry updates delivered directly to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={`flex-1 px-4 py-3 rounded-2xl border backdrop-blur-sm transition-all duration-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                  theme === "dark"
+                    ? "bg-slate-800/40 border-slate-700/50 text-white placeholder-slate-400"
+                    : "bg-white/60 border-white/50 text-slate-900 placeholder-slate-500"
+                }`}
+              />
+              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-2xl">
+                Subscribe
+              </Button>
             </div>
           </div>
         </div>
