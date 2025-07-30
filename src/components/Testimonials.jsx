@@ -11,7 +11,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Marketing Director",
     company: "TechFlow Inc.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b6d31b8e?w=400&h=400&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     quote:
       "ADmyBRAND AI Suite transformed our marketing efficiency by 300%. The AI-generated content is indistinguishable from our best copywriters, and the automation features have saved us countless hours.",
     rating: 5,

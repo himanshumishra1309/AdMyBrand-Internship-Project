@@ -14,7 +14,7 @@ const blogPosts = [
       "Discover the cutting-edge AI technologies that will reshape digital marketing strategies and customer engagement in the coming year.",
     author: "Sarah Johnson",
     authorRole: "Head of AI Research",
-    authorImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     publishDate: "2025-01-15",
     readTime: "8 min read",
     category: "AI & Technology",
