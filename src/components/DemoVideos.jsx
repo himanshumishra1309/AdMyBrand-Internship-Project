@@ -158,22 +158,26 @@ export default function DemoVideos() {
                   <button
                     key={index}
                     onClick={() => handleStepClick(index)}
-                    className={`w-full p-3 lg:p-4 rounded-xl lg:rounded-2xl border-2 transition-all duration-300 text-left hover:scale-[1.02] ${
+                    className={`w-full p-3 lg:p-4 rounded-xl lg:rounded-2xl border-2 transition-all duration-300 text-left hover:scale-[1.02] hover:shadow-lg ${
                       currentStep === index
-                        ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20 shadow-lg"
+                        ? "border-blue-500 shadow-lg ring-2 ring-blue-500/20" + (
+                          theme === "dark" 
+                            ? " bg-blue-900/30 text-white" 
+                            : " bg-blue-50/80 text-slate-900"
+                        )
                         : theme === "dark"
-                          ? "border-slate-600 bg-slate-700/30 hover:bg-slate-600/30"
-                          : "border-slate-300 bg-white/50 hover:bg-white/70"
+                          ? "border-slate-600/60 bg-slate-700/40 hover:bg-slate-600/50 text-slate-200 hover:border-slate-500/70"
+                          : "border-slate-300/60 bg-white/70 hover:bg-white/90 text-slate-900 hover:border-slate-400/70"
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div
-                        className={`w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${
+                        className={`w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-300 ${
                           currentStep === index
-                            ? "bg-blue-500 text-white"
+                            ? "bg-blue-500 text-white shadow-lg ring-2 ring-blue-500/30"
                             : theme === "dark"
-                              ? "bg-slate-600 text-slate-300"
-                              : "bg-slate-300 text-slate-700"
+                              ? "bg-slate-600/80 text-slate-300 border border-slate-500/50"
+                              : "bg-slate-300/80 text-slate-700 border border-slate-400/50"
                         }`}
                       >
                         {index + 1}
@@ -231,7 +235,7 @@ export default function DemoVideos() {
                       <p className="text-blue-200 mb-4 lg:mb-6 text-sm lg:text-base">Interactive Product Demo</p>
                       <Button
                         onClick={handlePlayPause}
-                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl lg:rounded-2xl shadow-xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl lg:rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 border border-blue-500/30"
                       >
                         <Play className="mr-2 w-4 h-4 lg:w-5 lg:h-5" />
                         Start Demo
@@ -523,12 +527,12 @@ export default function DemoVideos() {
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                           <Button
                             onClick={handleRestart}
-                            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-xl border border-white/30"
+                            className="bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700/90 text-white rounded-xl border border-slate-600/50 hover:border-slate-500/60 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                           >
-                            <RotateCcw className="w-4 h-4 mr-2 text-white" />
-                            <span className="text-white">Watch Again</span>
+                            <RotateCcw className="w-4 h-4 mr-2" />
+                            <span>Watch Again</span>
                           </Button>
-                          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl">
+                          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl shadow-xl hover:shadow-blue-500/50 border border-blue-500/30 transition-all duration-300 hover:scale-105">
                             Start Free Trial
                           </Button>
                         </div>
@@ -537,7 +541,7 @@ export default function DemoVideos() {
                       /* Resume Play Button */
                       <Button
                         onClick={handlePlayPause}
-                        className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full border border-white/30"
+                        className="w-12 h-12 lg:w-16 lg:h-16 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700/90 rounded-full border border-slate-600/60 hover:border-slate-500/70 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110"
                       >
                         <Play className="w-6 h-6 lg:w-8 lg:h-8 text-white ml-0.5 lg:ml-1" />
                       </Button>
@@ -554,8 +558,10 @@ export default function DemoVideos() {
                       variant="ghost"
                       size="sm"
                       onClick={handlePlayPause}
-                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full ${
-                        theme === "dark" ? "hover:bg-slate-700" : "hover:bg-slate-100"
+                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full transition-all duration-300 hover:scale-110 ${
+                        theme === "dark" 
+                          ? "hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-600/30 hover:border-slate-500/50" 
+                          : "hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-300/50 hover:border-slate-400/60"
                       }`}
                     >
                       {isPlaying ? (
@@ -568,8 +574,10 @@ export default function DemoVideos() {
                       variant="ghost"
                       size="sm"
                       onClick={handleRestart}
-                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full ${
-                        theme === "dark" ? "hover:bg-slate-700" : "hover:bg-slate-100"
+                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full transition-all duration-300 hover:scale-110 ${
+                        theme === "dark" 
+                          ? "hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-600/30 hover:border-slate-500/50" 
+                          : "hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-300/50 hover:border-slate-400/60"
                       }`}
                     >
                       <RotateCcw className="w-3 h-3 lg:w-4 lg:h-4" />
@@ -580,8 +588,10 @@ export default function DemoVideos() {
                       variant="ghost"
                       size="sm"
                       onClick={() => setIsMuted(!isMuted)}
-                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full ${
-                        theme === "dark" ? "hover:bg-slate-700" : "hover:bg-slate-100"
+                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full transition-all duration-300 hover:scale-110 ${
+                        theme === "dark" 
+                          ? "hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-600/30 hover:border-slate-500/50" 
+                          : "hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-300/50 hover:border-slate-400/60"
                       }`}
                     >
                       {isMuted ? (
@@ -593,8 +603,10 @@ export default function DemoVideos() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full ${
-                        theme === "dark" ? "hover:bg-slate-700" : "hover:bg-slate-100"
+                      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full transition-all duration-300 hover:scale-110 ${
+                        theme === "dark" 
+                          ? "hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-600/30 hover:border-slate-500/50" 
+                          : "hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-300/50 hover:border-slate-400/60"
                       }`}
                     >
                       <Maximize className="w-3 h-3 lg:w-4 lg:h-4" />
