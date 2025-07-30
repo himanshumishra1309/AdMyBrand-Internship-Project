@@ -328,14 +328,88 @@ export default function Hero() {
                   ))}
                 </div>
 
-                {/* Performance Chart Placeholder */}
-                <div className={`h-32 rounded-xl border-2 border-dashed flex items-center justify-center ${
-                  theme === "dark" ? "border-slate-700/50" : "border-slate-300/50"
+                {/* Interactive Performance Chart */}
+                <div className={`h-44 rounded-xl border backdrop-blur-sm p-4 ${
+                  theme === "dark" 
+                    ? "border-slate-700/50 bg-slate-800/30" 
+                    : "border-slate-300/50 bg-white/50"
                 }`}>
-                  <div className="text-center">
-                    <BarChart3 className={`w-8 h-8 mx-auto mb-2 ${theme === "dark" ? "text-slate-500" : "text-slate-400"}`} />
-                    <div className={`text-sm ${theme === "dark" ? "text-slate-400" : "text-slate-600"}`}>
-                      Interactive Analytics Chart
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className={`text-sm font-bold ${theme === "dark" ? "text-white" : "text-slate-900"}`}>
+                      📊 Campaign Performance
+                    </h4>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className={`text-xs font-medium ${theme === "dark" ? "text-green-400" : "text-green-600"}`}>
+                        Live Data
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Chart Visualization */}
+                  <div className="flex items-end justify-between h-24 gap-1 px-2">
+                    {[
+                      { height: 60, value: "2.3K", color: "bg-gradient-to-t from-blue-500 to-blue-400", day: "Mon" },
+                      { height: 85, value: "3.8K", color: "bg-gradient-to-t from-green-500 to-green-400", day: "Tue" },
+                      { height: 45, value: "1.9K", color: "bg-gradient-to-t from-purple-500 to-purple-400", day: "Wed" },
+                      { height: 95, value: "4.2K", color: "bg-gradient-to-t from-indigo-500 to-indigo-400", day: "Thu" },
+                      { height: 70, value: "2.7K", color: "bg-gradient-to-t from-blue-500 to-blue-400", day: "Fri" },
+                      { height: 100, value: "5.1K", color: "bg-gradient-to-t from-green-500 to-green-400", day: "Sat" },
+                      { height: 80, value: "3.4K", color: "bg-gradient-to-t from-purple-500 to-purple-400", day: "Sun" },
+                    ].map((bar, index) => (
+                      <div key={index} className="flex-1 flex flex-col items-center cursor-pointer">
+                        <div 
+                          className={`w-full ${bar.color} rounded-t-md transition-all duration-700 hover:scale-110 relative shadow-lg hover:shadow-xl group`}
+                          style={{ 
+                            height: `${bar.height}px`,
+                            minHeight: '20px',
+                            maxHeight: '80px'
+                          }}
+                        >
+                          {/* Animated shimmer effect */}
+                          <div 
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{ 
+                              animation: `shimmer 2s infinite`,
+                              animationDelay: `${index * 0.2}s`
+                            }}
+                          ></div>
+                          
+                          {/* Tooltip */}
+                          <div className={`absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded-md text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-10 ${
+                            theme === "dark" 
+                              ? "bg-slate-800 text-white border border-slate-600" 
+                              : "bg-white text-slate-900 border border-slate-300"
+                          } shadow-lg`}>
+                            {bar.value}
+                            <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 ${
+                              theme === "dark" 
+                                ? "border-l-2 border-r-2 border-t-4 border-transparent border-t-slate-800"
+                                : "border-l-2 border-r-2 border-t-4 border-transparent border-t-white"
+                            }`}></div>
+                          </div>
+                        </div>
+                        
+                        <div className={`text-xs mt-2 font-medium ${theme === "dark" ? "text-slate-400" : "text-slate-600"}`}>
+                          {bar.day}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Chart Legend */}
+                  <div className="flex items-center justify-center gap-6 mt-4 text-xs">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-gradient-to-t from-blue-500 to-blue-400 rounded-sm shadow-sm"></div>
+                      <span className={`font-medium ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>Clicks</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-gradient-to-t from-green-500 to-green-400 rounded-sm shadow-sm"></div>
+                      <span className={`font-medium ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>Conversions</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-gradient-to-t from-purple-500 to-purple-400 rounded-sm shadow-sm"></div>
+                      <span className={`font-medium ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>Revenue</span>
                     </div>
                   </div>
                 </div>
